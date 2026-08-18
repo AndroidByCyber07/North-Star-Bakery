@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>North Star Bakery | Home</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="bakery-logo.png" alt="North Star Bakery logo">
+
+        <h1>North Star Bakery</h1>
+
+        <p>Warm, handmade breads and baked goods made for our neighborhood.</p>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="products.html">Products</a></li>
+
+                <li><a href="about.html">About Us</a></li>
+
+                <li><a href="contact.html">Contact and Pre-Orders</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <h2>Welcome to North Star Bakery</h2>
+
+            <p>
+
+                We are a neighborhood bakery dedicated to making fresh breads,
+
+                pastries, and cakes with care. Stop by for your morning favorite,
+
+                pick up something special for your family, or contact us about
+
+                your next event.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>What We're Known For</h2>
+
+            <p>
+
+                North Star Bakery is known for small-batch baking, traditional
+
+                recipes, fresh ingredients, and the welcoming feeling of a local
+
+                neighborhood bakery. Our breads are baked fresh, and our pastries
+
+                and cakes are prepared with attention to detail.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Featured Item of the Week</h2>
+
+            <picture>
+
+                <source media="(min-width: 800px)" srcset="bakery-feature-large.jpg">
+
+                <source media="(max-width: 799px)" srcset="bakery-feature-small.jpg">
+
+                <img src="bakery-feature-small.jpg"
+
+                     alt="Featured freshly baked bakery item displayed for customers">
+
+            </picture>
+
+            <p>
+
+                Try our Featured Item of the Week, selected from our freshly
+
+                baked favorites. Contact us to ask about availability or place
+
+                a pre-order.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Hours and Location</h2>
+
+            <p>
+
+                <strong>Monday-Friday:</strong> 6:30 a.m.-6:00 p.m.<br>
+
+                <strong>Saturday:</strong> 7:00 a.m.-4:00 p.m.<br>
+
+                <strong>Sunday:</strong> Closed
+
+            </p>
+
+            <p>
+
+                Visit us in the neighborhood for fresh bread, pastries, and
+
+                friendly service.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>A Look Behind the Scenes</h2>
+
+            <video controls width="640">
+
+                <source src="bakery-behind-scenes.mp4" type="video/mp4">
+
+                Your browser does not support HTML video. Please visit North
+
+                Star Bakery in person or contact us for more information.
+
+            </video>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2026 North Star Bakery. Freshly baked for our community.</p>
+
+    </footer>
+
+</body>
+
+</html>
