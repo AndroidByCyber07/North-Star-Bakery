@@ -85,6 +85,28 @@
                     </p>
 
                 </fieldset>
+<fieldset>
+    <legend>Your Contact Information</legend>
+
+    <div class="form-row">
+        <p>
+            <label for="name">Name:</label>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   required
+                   minlength="2">
+        </p>
+
+        <p>
+            <label for="email">Email:</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   required>
+        </p>
+    </div>
+</fieldset>
 
                 <fieldset>
 
