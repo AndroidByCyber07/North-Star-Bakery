@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>North Star Bakery | About Us</title>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="bakery-logo.png" alt="North Star Bakery logo">
+
+        <h1>About North Star Bakery</h1>
+
+        <p>A neighborhood bakery built around fresh food and community.</p>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="products.html">Products</a></li>
+
+                <li><a href="about.html">About Us</a></li>
+
+                <li><a href="contact.html">Contact and Pre-Orders</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <h2>Our Story</h2>
+
+            <img src="bakery-storefront.jpg"
+
+                 alt="Exterior storefront of North Star Bakery">
+
+            <p>
+
+                North Star Bakery began with a simple goal: to create a place
+
+                where neighbors could find fresh, handmade baked goods and
+
+                feel welcome. What started as a love of traditional baking has
+
+                grown into a community-focused bakery serving local customers,
+
+                families, commuters, and event planners.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Our Sourcing Philosophy</h2>
+
+            <p>
+
+                We believe good baking starts with good ingredients. We focus
+
+                on using quality ingredients and sourcing from trusted suppliers
+
+                whenever possible. Our approach is simple: prepare food
+
+                carefully, bake in manageable batches, and serve it fresh.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Our Team</h2>
+
+            <p>
+
+                Our bakers and staff share a passion for hospitality and
+
+                handmade food. From preparing dough before sunrise to greeting
+
+                customers throughout the day, our team works together to make
+
+                every visit feel personal.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Behind Every Bake</h2>
+
+            <p>
+
+                From mixing dough to preparing the day's pastries, baking is a
+
+                team effort. We take pride in the care and craftsmanship that
+
+                goes into everything we offer.
+
+            </p>
+
+            <p>
+
+                Have a question about our ingredients, products, or ordering?
+
+                <a href="contact.html">Contact our bakery team.</a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>© 2026 North Star Bakery. Freshly baked for our community.</p>
+
+    </footer>
+
+</body>
+
+</html>
