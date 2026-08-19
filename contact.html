@@ -1,172 +1,237 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact North Star Bakery or submit a pre-order request.">
-    <title>North Star Bakery | Contact and Pre-Orders</title>
-    <link rel="stylesheet" href="styles.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Contact North Star Bakery or submit a pre-order request.">
+
+<title>North Star Bakery | Contact and Pre-Orders</title>
+
+<link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
 
 <header>
-    <img src="bakery-logo_c.png" alt="North Star Bakery logo">
 
-    <h1>Contact North Star Bakery</h1>
+<img src="bakery-logo_c.png" alt="North Star Bakery logo">
 
-    <p>
-        Ask a question or request a pre-order for pickup.
-    </p>
+<h1>Contact North Star Bakery</h1>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact &amp; Pre-Orders</a></li>
-        </ul>
-    </nav>
+<p>
+Ask a question or request a pre-order for pickup.
+</p>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="about.html">About Us</a></li>
+
+<li><a href="contact.html">Contact &amp; Pre-Orders</a></li>
+
+</ul>
+
+</nav>
+
 </header>
 
 <main>
 
-    <section>
-        <h2>Pre-Order and Inquiry Form</h2>
+<section>
 
-        <form action="#" method="post">
+<h2>Pre-Order and Inquiry Form</h2>
 
-            <fieldset>
-                <legend>Your Contact Information</legend>
+<form id="order-form" action="#" method="post">
 
-                <div class="form-row">
+<fieldset>
 
-                    <p>
-                        <label for="name">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                            minlength="2">
-                    </p>
+<legend>Your Contact Information</legend>
 
-                    <p>
-                        <label for="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required>
-                    </p>
+<div class="form-row">
 
-                </div>
-            </fieldset>
+<p>
 
-            <fieldset>
-                <legend>Request Details</legend>
+<label for="name">Name:</label>
 
-                <p>
-                    <label for="pickup-date">Pickup Date:</label>
+<input
+type="text"
+id="name"
+name="name"
+required
+minlength="2"
+placeholder="Enter your name">
 
-                    <input
-                        type="date"
-                        id="pickup-date"
-                        name="pickup-date"
-                        required>
-                </p>
+</p>
 
-                <p>
-                    <label for="request-type">Request Type:</label>
 
-                    <select
-                        id="request-type"
-                        name="request-type"
-                        required>
+<p>
 
-                        <option value="">
-                            -- Please choose one --
-                        </option>
+<label for="email">Email:</label>
 
-                        <option value="pre-order">
-                            Pre-Order
-                        </option>
+<input
+type="email"
+id="email"
+name="email"
+required
+placeholder="you@example.com">
 
-                        <option value="general-question">
-                            General Question
-                        </option>
+</p>
 
-                    </select>
-                </p>
+</div>
 
-                <p>
-                    <label for="item-details">
-                        Item Details:
-                    </label>
+</fieldset>
 
-                    <textarea
-                        id="item-details"
-                        name="item-details"
-                        rows="6"
-                        required
-                        minlength="5"
-                        placeholder="Tell us what you would like to order or ask about."></textarea>
-                </p>
 
-                <p>
-                    <label for="allergy-notes">
-                        Allergy Notes, If Applicable:
-                    </label>
+<fieldset>
 
-                    <textarea
-                        id="allergy-notes"
-                        name="allergy-notes"
-                        rows="4"
-                        placeholder="Please list any allergies or dietary concerns."></textarea>
-                </p>
+<legend>Request Details</legend>
 
-            </fieldset>
+<p>
 
-            <button type="submit">
-                Submit Request
-            </button>
+<label for="pickup-date">Pickup Date:</label>
 
-        </form>
-    </section>
+<input
+type="date"
+id="pickup-date"
+name="pickup-date"
+required>
 
-    <section>
-        <h2>Location and Hours</h2>
+</p>
 
-        <p>
-            <strong>Location:</strong>
-            North Star Bakery neighborhood storefront
-        </p>
 
-        <p>
-            <strong>Monday-Friday:</strong> 6:30 a.m.-6:00 p.m.<br>
-            <strong>Saturday:</strong> 7:00 a.m.-4:00 p.m.<br>
-            <strong>Sunday:</strong> Closed
-        </p>
-    </section>
+<p>
 
-    <section>
-        <h2>Planning an Event?</h2>
+<label for="request-type">Request Type:</label>
 
-        <p>
-            We welcome inquiries from families, commuters, and event
-            planners. For larger orders, please provide as much information
-            as possible so our bakery team can review your request.
-        </p>
-    </section>
+<select
+id="request-type"
+name="request-type"
+required>
+
+<option value="">
+-- Please choose one --
+</option>
+
+<option value="pre-order">
+Pre-Order
+</option>
+
+<option value="general-question">
+General Question
+</option>
+
+</select>
+
+</p>
+
+
+<p>
+
+<label for="item-details">
+Item Details:
+</label>
+
+<textarea
+id="item-details"
+name="item-details"
+rows="6"
+required
+minlength="5"
+placeholder="Tell us what you would like to order or ask about."></textarea>
+
+</p>
+
+
+<p>
+
+<label for="allergy-notes">
+Allergy Notes, If Applicable:
+</label>
+
+<textarea
+id="allergy-notes"
+name="allergy-notes"
+rows="4"
+placeholder="Please list any allergies or dietary concerns."></textarea>
+
+</p>
+
+</fieldset>
+
+
+<div id="form-success" class="form-success"></div>
+
+
+<button type="submit">
+Submit Request
+</button>
+
+</form>
+
+</section>
+
+
+<section>
+
+<h2>Location and Hours</h2>
+
+<p>
+
+<strong>Location:</strong>
+North Star Bakery neighborhood storefront
+
+</p>
+
+<p>
+
+<strong>Monday-Friday:</strong> 6:30 a.m.-6:00 p.m.<br>
+
+<strong>Saturday:</strong> 7:00 a.m.-4:00 p.m.<br>
+
+<strong>Sunday:</strong> Closed
+
+</p>
+
+</section>
+
+
+<section>
+
+<h2>Planning an Event?</h2>
+
+<p>
+
+We welcome inquiries from families, commuters, and event
+planners. For larger orders, please provide as much information
+as possible so our bakery team can review your request.
+
+</p>
+
+</section>
 
 </main>
 
 <footer>
-    <p>
-        &copy; 2026 North Star Bakery. Freshly baked for our community.
-    </p>
+
+<p>
+&copy; 2026 North Star Bakery. Freshly baked for our community.
+</p>
+
 </footer>
 
+<script src="script.js"></script>
+
 </body>
+
 </html>
