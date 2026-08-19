@@ -1,9 +1,9 @@
 // ==========================================
 // North Star Bakery - Touchstone 4 JavaScript
-// Created for Caitlyn Hyde
+// Caitlyn Hyde
 // ==========================================
 
-// Product data
+// Product data - Array 1
 const products = [
     {
         name: "Signature Loaf",
@@ -31,7 +31,7 @@ const products = [
     }
 ];
 
-// Category data
+// Category data - Array 2
 const categories = [
     "All Products",
     "Breads",
@@ -39,7 +39,11 @@ const categories = [
     "Cakes"
 ];
 
-// Display product categories
+
+// ==========================================
+// PRODUCT FEATURE
+// ==========================================
+
 function createCategoryOptions() {
     const categorySelect = document.getElementById("category-filter");
 
@@ -47,15 +51,19 @@ function createCategoryOptions() {
         return;
     }
 
+    categorySelect.innerHTML = "";
+
     categories.forEach(function(category) {
         const option = document.createElement("option");
+
         option.value = category;
         option.textContent = category;
+
         categorySelect.appendChild(option);
     });
 }
 
-// Display products based on selected category
+
 function displayProducts(category) {
     const productList = document.getElementById("product-list");
 
@@ -65,31 +73,38 @@ function displayProducts(category) {
 
     productList.innerHTML = "";
 
-    const filteredProducts = category === "All Products"
-        ? products
-        : products.filter(function(product) {
-            return product.category === category;
-        });
-
-    if (filteredProducts.length === 0) {
-        productList.innerHTML =
-            "<p>No products are currently available in this category.</p>";
-        return;
-    }
+    const filteredProducts =
+        category === "All Products"
+            ? products
+            : products.filter(function(product) {
+                return product.category === category;
+            });
 
     filteredProducts.forEach(function(product) {
+
         const productCard = document.createElement("article");
 
         productCard.className = "product-card";
 
         productCard.innerHTML = `
             <h3>${product.name}</h3>
-            <p><strong>Category:</strong> ${product.category}</p>
-            <p><strong>Price:</strong> ${product.price}</p>
+
+            <p>
+                <strong>Category:</strong>
+                ${product.category}
+            </p>
+
+            <p>
+                <strong>Price:</strong>
+                ${product.price}
+            </p>
+
             <p>${product.description}</p>
-            <button type="button"
-                    class="favorite-button"
-                    data-product="${product.name}">
+
+            <button
+                type="button"
+                class="favorite-button"
+                data-product="${product.name}">
                 ☆ Save as Favorite
             </button>
         `;
@@ -98,236 +113,318 @@ function displayProducts(category) {
     });
 
     addFavoriteListeners();
+
+    const savedFavorite =
+        localStorage.getItem("northStarFavorite");
+
+    if (savedFavorite) {
+        updateFavoriteButtons(savedFavorite);
+    }
 }
 
-// Save a favorite product
-function saveFavorite(productName) {
-    localStorage.setItem("northStarFavorite", productName);
 
-    const favoriteMessage = document.getElementById("favorite-message");
+function saveFavorite(productName) {
+
+    localStorage.setItem(
+        "northStarFavorite",
+        productName
+    );
+
+    const favoriteMessage =
+        document.getElementById("favorite-message");
 
     if (favoriteMessage) {
+
         favoriteMessage.textContent =
-            "★ Your favorite is saved: " + productName;
+            "★ Your favorite is saved: " +
+            productName;
     }
 
     updateFavoriteButtons(productName);
 }
 
-// Load the saved favorite
+
 function loadFavorite() {
-    const savedFavorite = localStorage.getItem("northStarFavorite");
-    const favoriteMessage = document.getElementById("favorite-message");
+
+    const savedFavorite =
+        localStorage.getItem("northStarFavorite");
+
+    const favoriteMessage =
+        document.getElementById("favorite-message");
 
     if (savedFavorite && favoriteMessage) {
-        favoriteMessage.textContent =
-            "★ Your saved favorite: " + savedFavorite;
-    }
 
-    if (savedFavorite) {
-        updateFavoriteButtons(savedFavorite);
+        favoriteMessage.textContent =
+            "★ Your saved favorite: " +
+            savedFavorite;
     }
 }
 
-// Update favorite buttons
+
 function updateFavoriteButtons(savedFavorite) {
-    const buttons = document.querySelectorAll(".favorite-button");
+
+    const buttons =
+        document.querySelectorAll(".favorite-button");
 
     buttons.forEach(function(button) {
+
         if (button.dataset.product === savedFavorite) {
-            button.textContent = "★ Favorite Saved";
+
+            button.textContent =
+                "★ Favorite Saved";
+
         } else {
-            button.textContent = "☆ Save as Favorite";
+
+            button.textContent =
+                "☆ Save as Favorite";
         }
     });
 }
 
-// Add click events to favorite buttons
+
 function addFavoriteListeners() {
-    const buttons = document.querySelectorAll(".favorite-button");
+
+    const buttons =
+        document.querySelectorAll(".favorite-button");
 
     buttons.forEach(function(button) {
+
         button.addEventListener("click", function() {
-            saveFavorite(button.dataset.product);
+
+            saveFavorite(
+                button.dataset.product
+            );
+
         });
+
     });
-
-    const savedFavorite = localStorage.getItem("northStarFavorite");
-
-    if (savedFavorite) {
-        updateFavoriteButtons(savedFavorite);
-    }
 }
 
-// Validate the contact/pre-order form
+
+// ==========================================
+// FORM VALIDATION
+// ==========================================
+
 function validateForm(event) {
+
+    // Stop the form from submitting
+    // until JavaScript checks everything.
     event.preventDefault();
 
-    const form = document.getElementById("order-form");
+    const name =
+        document.getElementById("name");
 
-    if (!form) {
-        return;
-    }
+    const email =
+        document.getElementById("email");
+
+    const pickupDate =
+        document.getElementById("pickup-date");
+
+    const requestType =
+        document.getElementById("request-type");
+
+    const itemDetails =
+        document.getElementById("item-details");
 
     let isValid = true;
 
+    // Remove old errors first
     clearErrors();
 
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const pickupDate = document.getElementById("pickup-date");
-    const requestType = document.getElementById("request-type");
-    const itemDetails = document.getElementById("item-details");
 
-    // Name validation
+    // NAME CHECK
+
     if (name.value.trim() === "") {
-        showError(name, "Please enter your name.");
-        isValid = false;
-    } else if (name.value.trim().length < 2) {
-        showError(name, "Name must be at least 2 characters long.");
-        isValid = false;
-    }
 
-    // Email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (email.value.trim() === "") {
-        showError(email, "Please enter your email address.");
-        isValid = false;
-    } else if (!emailPattern.test(email.value.trim())) {
-        showError(email, "Please enter a valid email address.");
-        isValid = false;
-    }
-
-    // Pickup date validation
-    if (pickupDate.value === "") {
-        showError(pickupDate, "Please select a pickup date.");
-        isValid = false;
-    }
-
-    // Request type validation
-    if (requestType.value === "") {
-        showError(requestType, "Please select a request type.");
-        isValid = false;
-    }
-
-    // Item details validation
-    if (itemDetails.value.trim() === "") {
-        showError(itemDetails, "Please describe your request.");
-        isValid = false;
-    } else if (itemDetails.value.trim().length < 5) {
         showError(
-            itemDetails,
-            "Please enter at least 5 characters."
+            name,
+            "Please enter your name."
         );
+
         isValid = false;
-    }
 
-    // If everything is valid
-    if (isValid) {
-        showSuccessMessage();
-    }
-}
-    const form = document.getElementById("order-form");
-
-    if (!form) {
-        return;
-    }
-
-    let isValid = true;
-
-    clearErrors();
-
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const itemDetails = document.getElementById("item-details");
-
-    // Required name check
-    if (name.value.trim() === "") {
-        showError(name, "Please enter your name.");
-        isValid = false;
     } else if (name.value.trim().length < 2) {
-        showError(name, "Name must be at least 2 characters long.");
+
+        showError(
+            name,
+            "Name must be at least 2 characters long."
+        );
+
         isValid = false;
     }
 
-    // Email format check
+
+    // EMAIL CHECK
+
     const emailPattern =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email.value.trim() === "") {
-        showError(email, "Please enter your email address.");
+
+        showError(
+            email,
+            "Please enter your email address."
+        );
+
         isValid = false;
+
     } else if (!emailPattern.test(email.value.trim())) {
-        showError(email, "Please enter a valid email address.");
+
+        showError(
+            email,
+            "Please enter a valid email address."
+        );
+
         isValid = false;
     }
 
-    // Item details minimum length check
-    if (itemDetails.value.trim() === "") {
-        showError(itemDetails, "Please describe your request.");
+
+    // PICKUP DATE CHECK
+
+    if (pickupDate.value === "") {
+
+        showError(
+            pickupDate,
+            "Please select a pickup date."
+        );
+
         isValid = false;
+    }
+
+
+    // REQUEST TYPE CHECK
+
+    if (requestType.value === "") {
+
+        showError(
+            requestType,
+            "Please select a request type."
+        );
+
+        isValid = false;
+    }
+
+
+    // ITEM DETAILS CHECK
+
+    if (itemDetails.value.trim() === "") {
+
+        showError(
+            itemDetails,
+            "Please describe your request."
+        );
+
+        isValid = false;
+
     } else if (itemDetails.value.trim().length < 5) {
+
         showError(
             itemDetails,
             "Please enter at least 5 characters."
         );
+
         isValid = false;
     }
 
-    // Prevent submission if invalid
-    if (!isValid) {
-        event.preventDefault();
-    } else {
+
+    // SUCCESS MESSAGE
+
+    if (isValid) {
+
         showSuccessMessage();
+
     }
 }
 
-// Display an error beside a field
-function showError(field, message) {
-    const error = document.createElement("span");
 
-    error.className = "error-message";
-    error.textContent = message;
+// ==========================================
+// THIS IS THE FUNCTION YOU COULD NOT FIND
+// ==========================================
+
+function showError(field, message) {
+
+    const error =
+        document.createElement("span");
+
+    error.className =
+        "error-message";
+
+    error.textContent =
+        message;
 
     field.parentElement.appendChild(error);
+
     field.classList.add("input-error");
 }
 
-// Remove old validation messages
+
+// Remove previous errors
+
 function clearErrors() {
-    const errors = document.querySelectorAll(".error-message");
+
+    const errors =
+        document.querySelectorAll(
+            ".error-message"
+        );
 
     errors.forEach(function(error) {
         error.remove();
     });
 
-    const fields = document.querySelectorAll(".input-error");
+
+    const fields =
+        document.querySelectorAll(
+            ".input-error"
+        );
 
     fields.forEach(function(field) {
-        field.classList.remove("input-error");
+        field.classList.remove(
+            "input-error"
+        );
     });
 
-    const success = document.getElementById("form-success");
+
+    const success =
+        document.getElementById(
+            "form-success"
+        );
 
     if (success) {
+
         success.textContent = "";
+
     }
 }
 
-// Display a successful form message
+
+// Successful form message
+
 function showSuccessMessage() {
-    const success = document.getElementById("form-success");
+
+    const success =
+        document.getElementById(
+            "form-success"
+        );
 
     if (success) {
+
         success.textContent =
             "Thank you! Your request is ready to be submitted.";
+
     }
 }
 
-// Set up the Products page
+
+// ==========================================
+// INITIALIZE PRODUCTS PAGE
+// ==========================================
+
 function initializeProductsPage() {
-    const categorySelect = document.getElementById("category-filter");
+
+    const categorySelect =
+        document.getElementById(
+            "category-filter"
+        );
 
     if (!categorySelect) {
         return;
@@ -335,25 +432,61 @@ function initializeProductsPage() {
 
     createCategoryOptions();
 
-    categorySelect.addEventListener("change", function() {
-        displayProducts(categorySelect.value);
-    });
+    categorySelect.addEventListener(
+        "change",
+        function() {
 
-    displayProducts("All Products");
+            displayProducts(
+                categorySelect.value
+            );
+
+        }
+    );
+
+    displayProducts(
+        "All Products"
+    );
+
     loadFavorite();
 }
 
-// Set up the Contact page
+
+// ==========================================
+// INITIALIZE CONTACT PAGE
+// ==========================================
+
 function initializeContactPage() {
-    const form = document.getElementById("order-form");
+
+    const form =
+        document.getElementById(
+            "order-form"
+        );
 
     if (!form) {
         return;
     }
 
-    form.addEventListener("submit", validateForm);
+    form.addEventListener(
+        "submit",
+        validateForm
+    );
 }
 
+
+// ==========================================
+// START JAVASCRIPT
+// ==========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        initializeProductsPage();
+
+        initializeContactPage();
+
+    }
+);
 // Start the appropriate JavaScript
 document.addEventListener("DOMContentLoaded", function() {
     initializeProductsPage();
