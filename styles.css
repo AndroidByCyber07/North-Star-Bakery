@@ -422,3 +422,23 @@ footer p {
     }
 
 }
+
+
+/* Touchstone 4 - Visible Form Errors */
+
+.error-message {
+    display: block;
+    color: #b00020;
+    background-color: #ffe5e5;
+    border: 1px solid #b00020;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.input-error {
+    border: 3px solid #b00020 !important;
+    background-color: #fff0f0;
+}
