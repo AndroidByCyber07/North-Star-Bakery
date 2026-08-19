@@ -1,112 +1,122 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore breads, pastries, cakes, and pre-order options from North Star Bakery.">
-    <title>North Star Bakery | Products</title>
-    <link rel="stylesheet" href="styles.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Explore breads, pastries, cakes, and pre-order options from North Star Bakery.">
+
+<title>North Star Bakery | Products</title>
+
+<link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
 
 <header>
-    <img src="bakery-logo_c.png" alt="North Star Bakery logo">
 
-    <h1>Our Bakery Products</h1>
+<img src="bakery-logo_c.png" alt="North Star Bakery logo">
 
-    <p>
-        Fresh breads, pastries, and cakes made in small batches.
-    </p>
+<h1>Our Bakery Products</h1>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact &amp; Pre-Orders</a></li>
-        </ul>
-    </nav>
+<p>
+Fresh breads, pastries, and cakes made in small batches.
+</p>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="about.html">About Us</a></li>
+
+<li><a href="contact.html">Contact &amp; Pre-Orders</a></li>
+
+</ul>
+
+</nav>
+
 </header>
 
 <main>
 
-    <section>
-        <h2>Breads</h2>
+<section>
 
-        <figure>
-            <img
-                src="bakery-signature-loaf_c.png"
-                alt="Golden-brown North Star Bakery signature loaf">
+<h2>Find Your Favorite Bakery Item</h2>
 
-            <figcaption>
-                Our Signature Loaf is a crusty, handmade bread baked fresh
-                for customers who enjoy classic bakery flavor.
-            </figcaption>
-        </figure>
+<p>
+Use the category filter to quickly find the type of bakery product
+you are interested in.
+</p>
 
-        <p>
-            Our breads are made in small batches using carefully selected
-            ingredients and traditional baking techniques.
-        </p>
+<label for="category-filter">Choose a category:</label>
 
-        <p>
-            <strong>Typical price range:</strong> $5-$9
-        </p>
-    </section>
+<select id="category-filter">
 
-    <section>
-        <h2>Pastries</h2>
+<!-- JavaScript adds the category options here -->
 
-        <p>
-            Choose from flaky morning pastries, sweet treats, and rotating
-            seasonal favorites. Pastries are ideal for breakfast, coffee
-            breaks, family gatherings, or sharing with coworkers.
-        </p>
+</select>
 
-        <p>
-            <strong>Typical price range:</strong> $3-$6 per item
-        </p>
-    </section>
+<p id="favorite-message" class="favorite-message">
+No favorite has been saved yet.
+</p>
 
-    <section>
-        <h2>Cakes</h2>
+</section>
 
-        <p>
-            Our cakes are prepared for birthdays, celebrations, family
-            gatherings, and special events. Contact us in advance to
-            discuss flavors, sizes, decorations, and availability.
-        </p>
 
-        <p>
-            <strong>Typical price range:</strong> $30-$75
-        </p>
-    </section>
+<section>
 
-    <section>
-        <h2>Pre-Orders</h2>
+<h2>Available Products</h2>
 
-        <p>
-            We do not offer online checkout, but customers can contact us
-            to request a pre-order. Please include the item, quantity,
-            preferred pickup date, and any allergy information.
-        </p>
+<div id="product-list" class="product-list">
 
-        <p>
-            <a class="button-link" href="contact.html">
-                Submit a Pre-Order
-            </a>
-        </p>
-    </section>
+<!-- JavaScript displays products here -->
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>Pre-Orders</h2>
+
+<p>
+We do not offer online checkout, but customers can contact us
+to request a pre-order. Please include the item, quantity,
+preferred pickup date, and any allergy information.
+</p>
+
+<p>
+
+<a class="button-link" href="contact.html">
+Submit a Pre-Order
+</a>
+
+</p>
+
+</section>
 
 </main>
 
 <footer>
-    <p>
-        &copy; 2026 North Star Bakery. Freshly baked for our community.
-    </p>
+
+<p>
+&copy; 2026 North Star Bakery. Freshly baked for our community.
+</p>
+
 </footer>
 
+<script src="script.js"></script>
+
 </body>
+
 </html>
