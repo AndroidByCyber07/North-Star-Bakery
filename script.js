@@ -161,6 +161,73 @@ function addFavoriteListeners() {
 
 // Validate the contact/pre-order form
 function validateForm(event) {
+    event.preventDefault();
+
+    const form = document.getElementById("order-form");
+
+    if (!form) {
+        return;
+    }
+
+    let isValid = true;
+
+    clearErrors();
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const pickupDate = document.getElementById("pickup-date");
+    const requestType = document.getElementById("request-type");
+    const itemDetails = document.getElementById("item-details");
+
+    // Name validation
+    if (name.value.trim() === "") {
+        showError(name, "Please enter your name.");
+        isValid = false;
+    } else if (name.value.trim().length < 2) {
+        showError(name, "Name must be at least 2 characters long.");
+        isValid = false;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email.value.trim() === "") {
+        showError(email, "Please enter your email address.");
+        isValid = false;
+    } else if (!emailPattern.test(email.value.trim())) {
+        showError(email, "Please enter a valid email address.");
+        isValid = false;
+    }
+
+    // Pickup date validation
+    if (pickupDate.value === "") {
+        showError(pickupDate, "Please select a pickup date.");
+        isValid = false;
+    }
+
+    // Request type validation
+    if (requestType.value === "") {
+        showError(requestType, "Please select a request type.");
+        isValid = false;
+    }
+
+    // Item details validation
+    if (itemDetails.value.trim() === "") {
+        showError(itemDetails, "Please describe your request.");
+        isValid = false;
+    } else if (itemDetails.value.trim().length < 5) {
+        showError(
+            itemDetails,
+            "Please enter at least 5 characters."
+        );
+        isValid = false;
+    }
+
+    // If everything is valid
+    if (isValid) {
+        showSuccessMessage();
+    }
+}
     const form = document.getElementById("order-form");
 
     if (!form) {
