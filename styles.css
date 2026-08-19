@@ -328,3 +328,97 @@ footer p {
         min-width: 160px;
     }
 }
+/* ==========================================
+   Touchstone 4 JavaScript Feature
+   ========================================== */
+
+/* Product filter */
+
+#category-filter {
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.product-card {
+    background-color: #FFF9F0;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.product-card h3 {
+    color: var(--brown);
+    font-family: Georgia, "Times New Roman", serif;
+    margin-top: 0;
+}
+
+.favorite-button {
+    width: auto;
+    min-width: 180px;
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.favorite-button:hover,
+.favorite-button:focus {
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+.favorite-message {
+    background-color: #FFF4D6;
+    border-left: 4px solid var(--gold);
+    padding: 0.75rem;
+    font-weight: bold;
+    color: var(--brown);
+}
+
+
+/* ==========================================
+   Touchstone 4 Form Validation
+   ========================================== */
+
+.error-message {
+    display: block;
+    margin-top: 0.4rem;
+    color: #A52A2A;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.input-error {
+    border: 2px solid #A52A2A;
+    background-color: #FFF1F1;
+}
+
+.form-success {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    color: #245B2A;
+    background-color: #EAF6EA;
+    border-left: 4px solid #3C8D40;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   Responsive Product Layout
+   ========================================== */
+
+@media (min-width: 700px) {
+
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
