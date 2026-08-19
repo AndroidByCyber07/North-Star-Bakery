@@ -329,21 +329,22 @@ footer p {
     }
 }
 /* ==========================================
-   Touchstone 4 JavaScript Feature
+   TOUCHSTONE 4
+   INTERACTIVE PRODUCT FEATURE
    ========================================== */
-
-/* Product filter */
 
 #category-filter {
     max-width: 400px;
     margin-bottom: 1rem;
 }
 
+
 .product-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
 }
+
 
 .product-card {
     background-color: #FFF9F0;
@@ -352,11 +353,12 @@ footer p {
     padding: 1rem;
 }
 
+
 .product-card h3 {
     color: var(--brown);
-    font-family: Georgia, "Times New Roman", serif;
     margin-top: 0;
 }
+
 
 .favorite-button {
     width: auto;
@@ -369,11 +371,13 @@ footer p {
     cursor: pointer;
 }
 
+
 .favorite-button:hover,
 .favorite-button:focus {
     background-color: var(--gold);
     color: var(--dark);
 }
+
 
 .favorite-message {
     background-color: #FFF4D6;
@@ -385,60 +389,66 @@ footer p {
 
 
 /* ==========================================
-   Touchstone 4 Form Validation
+   TOUCHSTONE 4
+   FORM VALIDATION
    ========================================== */
 
 .error-message {
     display: block;
-    margin-top: 0.4rem;
-    color: #A52A2A;
+
+    color: #b00020;
+
+    background-color: #ffe5e5;
+
+    border: 2px solid #b00020;
+
+    padding: 10px;
+
+    margin-top: 6px;
+
+    margin-bottom: 10px;
+
+    border-radius: 5px;
+
     font-weight: bold;
-    font-size: 0.9rem;
+
+    font-size: 0.95rem;
 }
 
+
 .input-error {
-    border: 2px solid #A52A2A;
-    background-color: #FFF1F1;
+    border: 3px solid #b00020 !important;
+
+    background-color: #fff0f0 !important;
 }
+
 
 .form-success {
     margin: 1rem 0;
-    padding: 0.75rem;
+
+    padding: 10px;
+
     color: #245B2A;
+
     background-color: #EAF6EA;
+
     border-left: 4px solid #3C8D40;
+
     font-weight: bold;
 }
 
 
 /* ==========================================
-   Responsive Product Layout
+   RESPONSIVE PRODUCTS
    ========================================== */
 
 @media (min-width: 700px) {
 
     .product-list {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
     }
 
-}
-
-
-/* Touchstone 4 - Visible Form Errors */
-
-.error-message {
-    display: block;
-    color: #b00020;
-    background-color: #ffe5e5;
-    border: 1px solid #b00020;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.input-error {
-    border: 3px solid #b00020 !important;
-    background-color: #fff0f0;
 }
